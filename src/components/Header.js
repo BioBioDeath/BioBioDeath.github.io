@@ -1,11 +1,23 @@
-import { AppBar, Typography } from '@mui/material';
-import { Box } from '@mui/system';
+import { AppBar, Button, Toolbar, Typography } from '@mui/material';
 import React from 'react';
 
 export const Header = () => {
-    return(
-        <AppBar>
-            <Typography>Sean Sharp</Typography>
+    return (
+        <AppBar sx={{ background: 'none' }}>
+            <Toolbar>
+                <Typography color='primary' variant='h2' sx={{ flexGrow: 1 }}>
+                    Sean Sharp
+                </Typography>
+                <Button>
+                    Music
+                </Button>
+                <Button>
+                    Merch
+                </Button>
+                <Button>
+                    Madness
+                </Button>
+            </Toolbar>
         </AppBar>
     )
 }
