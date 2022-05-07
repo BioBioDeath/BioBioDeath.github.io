@@ -1,13 +1,14 @@
 import { Environment, ScrollControls, useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import React, { createRef } from 'react';
+import { OCTAGON_DISTANCE } from '../App';
 
 const Scene = ({ children }) => {
 
     return (
         <>
             <color attach="background" args={['#000000']} />
-            {/* <fog attach="fog" args={['#000000', 5, 35]} /> */}
+            <fog attach="fog" args={['#000000', OCTAGON_DISTANCE, OCTAGON_DISTANCE*2]} />
             <Environment preset="sunset" />
             <ScrollControls
                 pages={React.Children.count(children)}

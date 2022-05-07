@@ -6,7 +6,7 @@ import Scene from './components/Scene';
 import React from 'react';
 import theme from './Theme';
 import { Canvas } from '@react-three/fiber';
-import { PerspectiveCamera, Text } from '@react-three/drei';
+import { PerspectiveCamera, MeshReflectorMaterial } from '@react-three/drei';
 import Card from './components/Card';
 
 export const INIT_CAMERA_POSITION = [0, 0, -15];
@@ -21,12 +21,47 @@ function App() {
         <Header />
         <React.Suspense fallback={null}>
           <Canvas gl={{ alpha: false }} >
-            <PerspectiveCamera makeDefault position={INIT_CAMERA_POSITION} target={[0, 0, -OCTAGON_DISTANCE]} />
+            <PerspectiveCamera makeDefault position={INIT_CAMERA_POSITION} target={[0, 0, -OCTAGON_DISTANCE]} rotation={[0, 0, 0]} />
             <Scene>
-              <Card url='./assets/takeItSlow.png' />
-              <Card url='./assets/meBeforeYou.png' />
-              <Card url='./assets/WildWorld.png' />
+              <Card url='./assets/WrittenSignedAndDotted.jpeg' title="Written, Signed, & Dotted" description='Released 5-13-22' link='https://distrokid.com/hyperfollow/seansharp/written-signed--dotted' />
+              <Card url='./assets/WildWorld.png' title="Wild World" description='Released 3-18-22' link='https://distrokid.com/hyperfollow/seansharp/wild-world' />
+              <Card url='./assets/takeItSlow.png' title="Take it Slow" description='Released 1-7-22' link='https://distrokid.com/hyperfollow/seansharp/take-it-slow-4' />
+              <Card url='./assets/meBeforeYou.jpg' title="Me Before You" description='Released 10-8-21' link='https://distrokid.com/hyperfollow/seansharp/me-before-you-2' />
+              <Card url='./assets/TheLastNight.jpg' title="Last the Night" description='Released 6-18-21' link='https://distrokid.com/hyperfollow/seansharp/last-the-night-feat-josh-elliott' />
+              <Card url='./assets/CanYouHearTheCall.jpg' title="Can You Hear the Call?" description='Released 4-23-21' link='https://distrokid.com/hyperfollow/seansharp/can-you-hear-the-call-feat-worldsaway' />
             </Scene>
+            <ambientLight intensity={0.1} />
+            <mesh rotation={[0, 1.4, 0]} position={[-10, 0, -OCTAGON_DISTANCE]}>
+              <planeGeometry args={[150, 150]} />
+              <MeshReflectorMaterial
+                blur={[300, 300]}
+                resolution={512}
+                mixBlur={2}
+                mixStrength={40}
+                roughness={2}
+                depthScale={1.2}
+                minDepthThreshold={0.4}
+                maxDepthThreshold={1.4}
+                color="#030303"
+                metalness={0.5}
+              />
+            </mesh>
+            <ambientLight intensity={0.1} />
+            <mesh rotation={[0, -1.4, 0]} position={[10, 0, -OCTAGON_DISTANCE]}>
+              <planeGeometry args={[150, 150]} />
+              <MeshReflectorMaterial
+                blur={[300, 300]}
+                resolution={512}
+                mixBlur={2}
+                mixStrength={40}
+                roughness={2}
+                depthScale={1.2}
+                minDepthThreshold={0.4}
+                maxDepthThreshold={1.4}
+                color="#101010"
+                metalness={0.5}
+              />
+            </mesh>
           </Canvas>
         </React.Suspense>
       </Box>

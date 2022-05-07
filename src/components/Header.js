@@ -3,7 +3,8 @@ import React from 'react';
 
 export const Header = () => {
     return (
-        <AppBar sx={{ background: '#00000099' }}>
+        <AppBar elevation={0} sx={{ background: '#00000000' }}>
+        {/* <AppBar sx={{ background: '#00000099' }}> */}
             <Toolbar>
                 <Box sx={{ flex: 1 }}>
                     <Button>
@@ -12,7 +13,7 @@ export const Header = () => {
                         </Typography>
                     </Button>
                 </Box>
-                <Button>
+                {/* <Button>
                     Songs
                 </Button>
                 <Button>
@@ -20,7 +21,7 @@ export const Header = () => {
                 </Button>
                 <Button>
                     Sanity?
-                </Button>
+                </Button> */}
             </Toolbar>
         </AppBar>
     )
