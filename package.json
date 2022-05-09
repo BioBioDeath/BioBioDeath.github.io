@@ -5,7 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
-    "@fontsource/bungee": "^4.5.3",
+    "@fontsource/bungee": "^4.5.7",
     "@fontsource/bungee-outline": "^4.5.2",
     "@fontsource/lobster": "^4.5.1",
     "@mui/material": "^5.4.0",

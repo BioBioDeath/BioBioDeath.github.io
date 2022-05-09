@@ -1317,10 +1317,10 @@
   resolved "https://registry.yarnpkg.com/@fontsource/bungee-outline/-/bungee-outline-4.5.2.tgz#99aa4485949a2085f8b51ff586269253d0bae3dd"
   integrity sha512-eFmZUz7HW0FdHv+NhM55OcpD01JltRmNnE4jsvSbVsPxU4NG02b4fTvS4K3i0BQrAoRBSQo3w2Yvtwk8yZ//9g==
 
-"@fontsource/bungee@^4.5.3":
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/@fontsource/bungee/-/bungee-4.5.3.tgz#95a14e3f9fc08f8d44a5b55084f2cba33fcbb3b5"
-  integrity sha512-kpoFvuWy+QgWZfdM8/EKbVPHwNwt4Zm0bCOKsKDXKiynLJeEYRCDNvR3OKlgX/+vujs+FefaccJ3M7OJkdeEdw==
+"@fontsource/bungee@^4.5.7":
+  version "4.5.7"
+  resolved "https://registry.yarnpkg.com/@fontsource/bungee/-/bungee-4.5.7.tgz#f1e96153bf6b5ee3592bca61e507a18aee4f2b4e"
+  integrity sha512-rURYNGenDVsSoLCnREbpoFf4bYo8qeO5rberZebxQJhVniFtrPK2NxWOp8JOpZxbQEBizhooqeb70KW5w+X07g==
 
 "@fontsource/lobster@^4.5.1":
   version "4.5.3"
