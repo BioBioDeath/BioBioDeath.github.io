@@ -26,7 +26,7 @@ const Card = ({ url, index, title, description, link }) => {
         [Math.PI * 0.25, 0, 0],
     ];
 
-    const { height } = useThree((state) => state.viewport);
+    const { width } = useThree((state) => state.viewport);
     const image = useRef();
     const frame = useRef();
     const [isHovered, setIsHovered] = useState(false);
@@ -42,10 +42,12 @@ const Card = ({ url, index, title, description, link }) => {
         }
     })
 
+    const groupScale = (Math.log(width)/Math.log(16) * 1) - (width <= 4 ? 0.05 : 0);
     return (
         <group
             position={POSITION_FROM_INDEX[index]}
             rotation={ROTATION_FROM_INDEX[index]}
+            scale={groupScale}
         >
             <mesh
                 ref={frame}
@@ -58,7 +60,7 @@ const Card = ({ url, index, title, description, link }) => {
                 <meshBasicMaterial />
             </mesh>
             <Text position={[-9, 0, 0]} rotation={[0, 0, Math.PI / 2]} fontSize={1} font={'./assets/fonts/Bungee-Regular.ttf'}>{title}</Text>
-            <Image ref={image} url={url} scale={height * 2} position={[0, 0, 0]} />
+            <Image ref={image} url={url} scale={15} position={[0, 0, 0]} />
             <Text position={[9, 0, 0]} rotation={[0, 0, -Math.PI / 2]} fontSize={1} font={'./assets/fonts/Bungee-Regular.ttf'}>{description}</Text>
         </group>
     );
